@@ -1,9 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useHelper } from '../CustomHooks/useHelper';
 import { Link } from 'react-router-dom';
 
 const CountryCard = ( {data} ) => {
-  const dark = useSelector((state) => state.mode.dark);
+  const {dark} = useHelper();
 
   return (
     <Link to={`/country-details?country=${data.name}`} >

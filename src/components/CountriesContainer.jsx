@@ -1,26 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
+import {useHelper} from '../CustomHooks/useHelper'
 import search from '../assets/search.png'
 import {data} from '../data.js';
 import CountryCard from './CountryCard';
-import {setInputValue, setSelectValue} from '../redux/Slices/FilterSlice'
 
 const CountriesContainer = () => {
-    // fetching the state variables from slices
-    const dark = useSelector((state) => state.mode.dark);
-    const inputValue = useSelector((state) => state.filter.inputValue);
-    const selectValue = useSelector((state) => state.filter.selectValue);
-
-    const dispatch = useDispatch();
-
-    // setting the inputValue state variable each time the user enters something in input field
-    function inputChangeHandler(event){
-        dispatch(setInputValue(event.target.value));
-    }
-
-      // setting the selectValue state variable each time the user selects something from dropdown
-    function handleDropDownChange(event) {
-        dispatch(setSelectValue(event.target.value));
-    }
+    const {dark, inputValue, selectValue,inputChangeHandler,handleDropDownChange} = useHelper();
 
   return (
     <div className={`${dark ? 'bg-darkBg' : 'bg-lightBg'} w-full h-fit transition-all duration-100 py-[2.5rem]`}>
