@@ -15,7 +15,7 @@ const CountriesContainer = () => {
             <div className={`${dark? 'bg-darkElements' : 'bg-darkModeTextLightElements'} w-[35%] px-[2rem] py-[1rem] rounded-md shadow-md flex items-center gap-4`}>
                 <img src={search}  className='w-[1.2rem]  '/>
 
-                <input type="text" placeholder='Search for a country...' className='bg-transparent w-full focus:outline-none transition-all duration-100' name="inputValue" onChange={inputChangeHandler}/>
+                <input type="text" placeholder='Search for a country...' className='input   bg-transparent w-full focus:outline-none transition-all duration-100' name="inputValue" onChange={inputChangeHandler}/>
             </div>
 
             {/* dropdown */}

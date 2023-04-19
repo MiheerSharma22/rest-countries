@@ -11,11 +11,15 @@ export const useHelper = () => {
     // setting the inputValue state variable each time the user enters something in input field
     function inputChangeHandler(event){
         dispatch(setInputValue(event.target.value));
+        const dropDown = document.querySelector('.drop-down');
+        dropDown.value = "";
     }
 
     // setting the selectValue state variable each time the user selects something from dropdown
     function handleDropDownChange(event) {
         dispatch(setSelectValue(event.target.value));
+        const input = document.querySelector('.input');
+        input.value="";
     }
 
   return {dark, inputValue, selectValue,inputChangeHandler,handleDropDownChange};
