@@ -23,19 +23,19 @@ const CountryDetails = () => {
         </div>
 
         {/* country details container */}
-        <div className='w-[90%] h-fit  mx-auto flex justify-between mt-[3rem] items-center'>
+        <div className='w-[90%] h-fit  mx-auto flex flex-col lg:flex-row justify-between mt-[3rem] items-center'>
         {/* left */}
-            <div className='w-[40%]'>
-                <img src={country.flags.svg} className='h-[400px] w-full'/>
+            <div className='w-[80%] lg:w-[40%] mb-[1rem]'>
+                <img src={country.flags.svg} className='h-[250px] md:h-[400px] w-full'/>
             </div>
 
             {/* right */}
-            <div className='w-[50%] flex flex-col pb-[0.5rem]'>
+            <div className='w-[80%] md:w-[50%] flex flex-col pb-[0.5rem] items-center lg:items-start'>
                 <h2 className='text-2xl font-bold mb-[2rem]'>{country.name}</h2>
 
-                <div className='w-[80%] flex justify-between text-sm mb-[2rem]'>
+                <div className='details-container w-full lg:w-[80%] flex flex-col md:flex-row justify-between text-sm mb-[2rem]'>
                     {/* left-text-sub-container */}
-                    <div className='w-fit flex flex-col gap-4'>
+                    <div className='w-fit flex flex-col gap-4 mb-[1rem]'>
                         <p className='font-bold'>Native Name: <span className='font-normal'>{country.nativeName}</span></p>
                         <p className='font-bold'>Population: <span className='font-normal'>{country.population}</span></p>
                         <p className='font-bold'>Region: <span className='font-normal'>{country.region}</span></p>
@@ -52,7 +52,7 @@ const CountryDetails = () => {
                 </div>
 
                 {/* border countries */}
-                <div className='w-[40%]'>
+                <div className='w-full lg:w-[40%]'>
                     {
                         country.borders && 
                         <div>
@@ -60,7 +60,7 @@ const CountryDetails = () => {
 
                             <div className='flex flex-wrap gap-y-4 gap-x-2 '>
                                 {
-                                    country.borders.map((border) => <Link to={`/country-details?country=${border}`} ><span className={`${dark? 'bg-darkElements' : 'bg-darkModeTextLightElements'} px-[1rem] py-[0.3rem] rounded-sm shadow-md`}>{border}</span></Link>)
+                                    country.borders.map((border) => <Link to={`/country-details?country=${border}`} key={border} ><span className={`${dark? 'bg-darkElements' : 'bg-darkModeTextLightElements'} px-[1rem] py-[0.3rem] rounded-sm shadow-md`}>{border}</span></Link>)
                                 }
                             </div>
                            

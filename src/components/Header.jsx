@@ -21,8 +21,8 @@ const Header = () => {
 
         <button onClick={() => dispatch(toggleDarkMode()) }>
             {
-                dark ? <span className='text-lg font-semibold flex gap-2 justify-center items-center '><img src={sun} className='w-[1.2rem] h-[1.2rem]'/>Light Mode</span>
-                 : <span className='text-lg font-semibold flex gap-2 justify-center items-center'> <img src={moon} className='w-[1.2rem] h-[1.2rem]'/>Dark Mode</span>
+                dark ? <span className='text-lg font-semibold flex gap-2 justify-center items-center '><img src={sun} className='w-[1.2rem] h-[1.2rem]'/><p className='light-mode '>Light Mode</p></span>
+                 : <span className='text-lg font-semibold flex gap-2 justify-center items-center'> <img src={moon} className='w-[1.2rem] h-[1.2rem]'/><p className='dark-mode '>Dark Mode</p></span>
             }
         </button>
         </div>
