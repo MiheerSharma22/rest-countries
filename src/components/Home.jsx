@@ -1,13 +1,12 @@
-import React from 'react'
-import Header from './Header'
-import CountriesContainer from './CountriesContainer'
+import React from "react";
+import CountriesContainer from "./CountriesContainer";
 
 const Home = () => {
   return (
     <div>
-        <CountriesContainer/>
+      <CountriesContainer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
