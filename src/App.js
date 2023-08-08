@@ -6,7 +6,6 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const dark = useSelector((state) => state.mode.dark);
-  console.log("dark mode from session : ", dark);
 
   return (
     <div
