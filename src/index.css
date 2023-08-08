@@ -11,6 +11,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.drop-down {
+  appearance: unset;
+}
+
 @media (max-width: 500px) {
   .cards-container {
     padding: 0 1rem;
