@@ -19,6 +19,12 @@ const CountriesContainer = () => {
     matchingCountries = data.filter((data) =>
       data.name.toLowerCase().includes(inputValue.toLowerCase())
     );
+  } else if (selectValue !== "") {
+    matchingCountries = data.filter(
+      (data) => data.region.toLowerCase() === selectValue
+    );
+  } else {
+    matchingCountries = data;
   }
 
   return (
@@ -80,24 +86,14 @@ const CountriesContainer = () => {
         {
           // checking if the input field is not empty then mapping filtered countries on basis of value entered by user,
           // if filtered array is empty then displaying not found message
-          inputValue !== "" ? (
-            matchingCountries.length > 0 ? (
-              matchingCountries.map((data) => (
-                <CountryCard data={data} key={data.name} />
-              ))
-            ) : (
-              <p className="text-center text-3xl col-span-full mt-[7rem]">
-                Not Found
-              </p>
-            )
-          ) : // if input field is empty then check if the dropdown is set or not , if  some value is selected then filter on basis of that region
-          selectValue !== "" ? (
-            data
-              .filter((data) => data.region.toLowerCase() === selectValue)
-              .map((data) => <CountryCard data={data} key={data.name} />)
+          matchingCountries.length > 0 ? (
+            matchingCountries.map((data) => (
+              <CountryCard data={data} key={data.name} />
+            ))
           ) : (
-            // if dropdown is also not selected then just render every country on the page
-            data.map((data) => <CountryCard data={data} key={data.name} />)
+            <p className="text-center text-3xl col-span-full mt-[7rem]">
+              Not Found
+            </p>
           )
         }
       </div>
